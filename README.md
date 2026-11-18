@@ -12,3 +12,4 @@
 - [Commands](lesson-11-commands.html)
 - [Tener Que and Hay Que](lesson-12-tener-que-and-hay-que.html)
 - [Double Verbs and Ir A](lesson-13-double-verbs-and-ir-a.html)
+- [Verbs Like Gustar](lesson-14-verbs-like-gustar.html)
