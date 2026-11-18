@@ -7,3 +7,4 @@
 - [Subjects and Conjugations](lesson-06-subjects-and-conjugations.html)
 - [Ser vs Estar](lesson-07-ser-vs-estar.html)
 - [Possession](lesson-08-possession.html)
+- [Por vs Para](lesson-09-por-vs-para.html)
