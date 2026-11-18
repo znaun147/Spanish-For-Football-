@@ -1,2 +1,2 @@
 # Spanish-For-Football-
-- [Basic Conversation](Basic%20Conversation)
+- [Basic Conversation](Basic-Conversation.html)
