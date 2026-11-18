@@ -4,3 +4,4 @@
 - [Training Equipment](lesson-03-training-equipment.html)
 - [Position Commands](lesson-04-position-commands.html)
 - [Positions and Articles](lesson-05-positions-and-articles.html)
+- [Subjects and Conjugations](lesson-06-subjects-and-conjugations.html)
