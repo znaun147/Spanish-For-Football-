@@ -17,3 +17,4 @@
 - [Reflexive Verbs](lesson-16-reflexive-verbs.html)
 - [Direct vs Indirect Objects](lesson-17-direct-vs-indirect-objects.html)
 - [Imperfect Past Tense](lesson-18-imperfect-past-tense.html)
+- [Preterite Past Tense](lesson-19-preterite-past-tense.html)
