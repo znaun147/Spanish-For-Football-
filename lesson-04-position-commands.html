@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Position-Specific Words &amp; Match Commands | Spanish for Footballers</title>
+    <style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #f3f4f6;
+}
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.header {
+    border-bottom: 3px solid #16a34a;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+}
+.badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+h1 {
+    margin: 0 0 14px 0;
+    font-size: 1.75rem;
+    color: #111827;
+}
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    background: #f3f4f6;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+}
+.meta-grid input {
+    border: none;
+    border-bottom: 1px solid #9ca3af;
+    background: transparent;
+    padding: 3px;
+    width: 62%;
+    font-size: 0.92rem;
+}
+.guide-box {
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 28px;
+}
+.guide-box h3 {
+    margin: 0 0 8px 0;
+    color: #1e40af;
+    font-size: 1.05rem;
+}
+.guide-box p, .guide-box ul {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+.guide-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #ffffff;
+}
+.guide-box th, .guide-box td {
+    border: 1px solid #bfdbfe;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.guide-box th {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+h2 {
+    color: #15803d;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 6px;
+    margin-top: 32px;
+    font-size: 1.25rem;
+}
+table.match-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px 0;
+}
+table.match-table th, table.match-table td {
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    text-align: left;
+}
+table.match-table th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+}
+.word-bank {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.02rem;
+    color: #166534;
+    margin: 14px 0 20px 0;
+}
+.q-item {
+    margin-bottom: 14px;
+    padding: 12px 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+.q-item p {
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.98rem;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: #ffffff;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+input[type="text"].short-input {
+    width: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.inline-input {
+    width: 155px !important;
+    display: inline-block;
+    padding: 4px 8px !important;
+    margin: 0 4px;
+}
+input.correct {
+    border-color: #16a34a !important;
+    background-color: #dcfce7 !important;
+    color: #14532d !important;
+}
+input.incorrect {
+    border-color: #dc2626 !important;
+    background-color: #fee2e2 !important;
+    color: #7f1d1d !important;
+}
+.feedback-hint {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 6px;
+    color: #dc2626;
+}
+.feedback-hint.ok {
+    color: #16a34a;
+}
+.model-box {
+    display: none;
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #1e3a8a;
+}
+.action-bar {
+    margin-top: 28px;
+    padding: 18px 20px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+.btn-check {
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-check:hover {
+    background: #15803d;
+}
+.btn-reset {
+    background: #e5e7eb;
+    color: #374151;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-reset:hover {
+    background: #d1d5db;
+}
+.score-banner {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-left: auto;
+    color: #111827;
+}
+.voice-box {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 24px;
+}
+.nav-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.92rem;
+}
+.nav-footer a {
+    color: #16a34a;
+    text-decoration: none;
+    font-weight: 600;
+}
+@media print {
+    body { background: #fff; margin: 0; padding: 0; }
+    .container { box-shadow: none; padding: 0; }
+    .nav-footer, .action-bar { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="badge">Beginner Curriculum &bull; Lesson 4 of 19</span>
+        <h1>Position-Specific Words &amp; Match Commands</h1>
+        <div class="meta-grid">
+            <div><strong>Player:</strong> <input type="text" placeholder="Your name"></div>
+            <div><strong>Date:</strong> <input type="text" placeholder="DD/MM/YYYY"></div>
+            <div><strong>Position:</strong> <input type="text" placeholder="e.g. CM / ST"></div>
+        </div>
+    </div>
+
+    <div class="guide-box">
+        <h3>Beginner Quick Guide</h3>
+        
+            <p>Every position has its own tactical language on matchday. Master your role's core calls and understand what teammates around you are shouting:</p>
+            <table>
+                <tr><th>Role</th><th>Key Spanish Calls &amp; Commands</th><th>English Meaning</th></tr>
+                <tr><td><strong>Portero (GK)</strong></td><td><em>¡Mía! / ¡Sal! / ¡Barrera! / ¡Orden!</em></td><td>Keeper's! / Push out! / Set the wall! / Organize!</td></tr>
+                <tr><td><strong>Defensas (DEF)</strong></td><td><em>¡Línea! / ¡Cierra! / ¡Marca! / ¡Despeja!</em></td><td>Hold the line! / Tuck in! / Mark up! / Clear it!</td></tr>
+                <tr><td><strong>Centrocampistas (MID)</strong></td><td><em>¡Gira! / ¡Solo! / ¡De cara! / ¡Cambia!</em></td><td>Turn! / Time/Man-off! / Bounce pass! / Switch play!</td></tr>
+                <tr><td><strong>Delanteros (FWD)</strong></td><td><em>¡Al espacio! / ¡Al pie! / ¡Tira! / ¡Ataca el primer palo!</em></td><td>In behind! / To feet! / Shoot! / Attack near post!</td></tr>
+            </table>
+        
+    </div>
+
+    
+            <h2>Part 1: Match the Command to the Position</h2>
+            
+    <table class="match-table">
+        <thead><tr><th>Match Command</th><th style="width:105px;text-align:center;">Match</th><th>Best Position &amp; Meaning</th></tr></thead>
+        <tbody><tr><td>1. ¡Barrera, tres jugadores!</td><td style="text-align:center;"><input type="text" class="short-input" maxlength="1" data-ans="B"></td><td>A. Midfielder: Asking for a one-touch lay-off</td></tr><tr><td>2. ¡De cara!</td><td style="text-align:center;"><input type="text" class="short-input" maxlength="1" data-ans="A"></td><td>B. Goalkeeper: Organizing a 3-man wall on a free kick</td></tr><tr><td>3. ¡Línea, arriba!</td><td style="text-align:center;"><input type="text" class="short-input" maxlength="1" data-ans="D"></td><td>C. Striker: Asking for a through-ball behind the defense</td></tr><tr><td>4. ¡Al espacio!</td><td style="text-align:center;"><input type="text" class="short-input" maxlength="1" data-ans="C"></td><td>D. Center-Back: Pushing the defensive line up together</td></tr><tr><td>5. ¡Cambia de orientación!</td><td style="text-align:center;"><input type="text" class="short-input" maxlength="1" data-ans="E"></td><td>E. Central Midfielder: Switch the ball to the opposite wing</td></tr></tbody>
+    </table>
+    
+            <h2>Part 2: Real-Time Match Callouts</h2>
+            <div class="word-bank">Word Bank: &nbsp; ¡Despeja! &nbsp;|&nbsp; ¡Gira! &nbsp;|&nbsp; ¡Mía! &nbsp;|&nbsp; ¡Al pie! &nbsp;|&nbsp; ¡Cierra!</div>
+            <div class="q-item"><p>1. You are a midfielder and see your teammate has space behind him to turn: <input type="text" class="inline-input" placeholder="..." data-ans="¡Gira!|Gira"></p></div>
+<div class="q-item"><p>2. You are a goalkeeper coming out to catch a corner kick: <input type="text" class="inline-input" placeholder="..." data-ans="¡Mía!|Mia|Mía"></p></div>
+<div class="q-item"><p>3. You are a striker with your back to goal asking for the ball to your feet: <input type="text" class="inline-input" placeholder="..." data-ans="¡Al pie!|Al pie"></p></div>
+<div class="q-item"><p>4. Danger in the 6-yard box! Tell your center-back to clear the ball immediately: <input type="text" class="inline-input" placeholder="..." data-ans="¡Despeja!|Despeja"></p></div>
+<div class="q-item"><p>5. The opposition is attacking centrally. Tell your full-back to tuck inside: <input type="text" class="inline-input" placeholder="..." data-ans="¡Cierra!|Cierra"></p></div>
+            <h2>Part 3: Your Position Playbook</h2>
+            <div class="q-item"><p>1. Write 3 commands you shout most often in your specific position:</p><input type="text" class="open-input" placeholder="Type your Spanish response..."><div class="model-box"><strong>Sample Pitch Answer:</strong> ¡Gira! / ¡Cambia de orientación! / ¡Al espacio! (adapt to your position)</div></div>
+<div class="q-item"><p>2. You are pressing high with your striker partner. Tell him to press the center-back and block the pass:</p><input type="text" class="open-input" placeholder="Type your Spanish response..."><div class="model-box"><strong>Sample Pitch Answer:</strong> ¡Presiona al central y cierra la línea de pase!</div></div>
+<div class="q-item"><p>3. You are defending a corner kick. Call out who you are marking:</p><input type="text" class="open-input" placeholder="Type your Spanish response..."><div class="model-box"><strong>Sample Pitch Answer:</strong> ¡Yo marco al nueve! / ¡Tengo al segundo palo!</div></div>
+    <h2>Part 4: Pitch Audio / Voice Note Prep</h2>
+    <div class="voice-box">
+        <p><strong>Speaking Drill:</strong> Shout 6 match commands for your specific position with full match-day projection.</p>
+        <label><input type="checkbox"> Voice note recorded and sent to tutor</label>
+    </div>
+    
+
+    <div class="action-bar">
+        <button type="button" class="btn-check" onclick="checkAnswers()">Check My Answers</button>
+        <button type="button" class="btn-reset" onclick="resetWorksheet()">Reset</button>
+        <span id="score-banner" class="score-banner"></span>
+    </div>
+
+    <div class="nav-footer">
+        <a href="lesson-03-training-equipment.html">&larr; Previous Lesson</a>
+        <a href="index.html">All 19 Lessons</a>
+        <a href="lesson-05-positions-and-articles.html">Next Lesson &rarr;</a>
+    </div>
+</div>
+
+<script>
+function normalizeText(str) {
+    return str
+        .toLowerCase()
+        .trim()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[¡!¿?.,;:()]/g, "")
+        .replace(/\s+/g, " ");
+}
+
+function checkAnswers() {
+    const inputs = document.querySelectorAll('input[data-ans]');
+    let total = inputs.length;
+    let correctCount = 0;
+
+    // Clear old hints
+    document.querySelectorAll('.feedback-hint').forEach(el => el.remove());
+
+    inputs.forEach(input => {
+        const rawUser = input.value;
+        const userNorm = normalizeText(rawUser);
+        const acceptedList = input.getAttribute('data-ans').split('|').map(a => normalizeText(a));
+        const displayAns = input.getAttribute('data-ans').split('|')[0];
+
+        input.classList.remove('correct', 'incorrect');
+
+        const hint = document.createElement('span');
+        hint.className = 'feedback-hint';
+
+        if (userNorm !== "" && acceptedList.includes(userNorm)) {
+            input.classList.add('correct');
+            hint.classList.add('ok');
+            hint.textContent = "✓";
+            correctCount++;
+        } else {
+            input.classList.add('incorrect');
+            hint.textContent = "✗ (" + displayAns + ")";
+        }
+        input.insertAdjacentElement('afterend', hint);
+    });
+
+    // Reveal sample answers for open-ended Part 3
+    document.querySelectorAll('.model-box').forEach(box => {
+        box.style.display = 'block';
+    });
+
+    const pct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+    const banner = document.getElementById('score-banner');
+    banner.textContent = `Score: ${correctCount} / ${total} (${pct}%)`;
+    banner.style.color = pct >= 80 ? '#16a34a' : (pct >= 50 ? '#d97706' : '#dc2626');
+}
+
+function resetWorksheet() {
+    document.querySelectorAll('input[data-ans]').forEach(input => {
+        input.value = '';
+        input.classList.remove('correct', 'incorrect');
+    });
+    document.querySelectorAll('.open-input').forEach(input => {
+        input.value = '';
+    });
+    document.querySelectorAll('.feedback-hint').forEach(el => el.remove());
+    document.querySelectorAll('.model-box').forEach(box => {
+        box.style.display = 'none';
+    });
+    const banner = document.getElementById('score-banner');
+    banner.textContent = '';
+}
+</script>
+
+</body>
+</html>
