@@ -16,3 +16,4 @@
 - [Regular Verbs and Ing](lesson-15-regular-verbs-and-ing.html)
 - [Reflexive Verbs](lesson-16-reflexive-verbs.html)
 - [Direct vs Indirect Objects](lesson-17-direct-vs-indirect-objects.html)
+- [Imperfect Past Tense](lesson-18-imperfect-past-tense.html)
